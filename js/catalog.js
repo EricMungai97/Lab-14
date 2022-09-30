@@ -11,7 +11,8 @@ function populateForm() {
 
   //TODO: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
-  for (let i = 0; i < Product.allProducts.length; i++) {
+  for (let i in Product.allProducts) {
+
     let option = document.createElement('option');
     option.value = Product.allProducts[i].name;
     option.textContent = Product.allProducts[i].name;
@@ -38,31 +39,32 @@ function handleSubmit(event) {
 
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
+
   // TODO: suss out the item picked from the select list
   let item = document.getElementById('items').value;
+
+  console.log('items', item);
   // TODO: get the quantity
   let quantity = document.getElementById('quantity').value;
-
-  let basket = document.querySelector('#cartContents');
-
-  let liElem = document.createElement('li');
+  let shoppingCart = document.querySelector('#cartContents');
+  let liElem = document.createElement('liElem');
   liElem.textContent = item;
-  basket.appendChild(liElem);
+  shoppingCart.appendChild(liElem);
+  console.log('quantity', quantity);
+  // TODO: using those, add one item to the Cart
 
-  let li1Elem = document.createElement('li');
-  li1Elem.textContent = quantity;
-  basket.appendChild(li1Elem);
+  
 
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {
-  let itemcount = document.querySelector('itemCount')
-
+function updateCounter() { 
+let itemCount = Document.querySelector('itemCount');
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
@@ -72,6 +74,8 @@ function updateCartPreview() {
 // Call that handleSubmit method above and kick off the whole process
 const catalogForm = document.getElementById('catalog');
 catalogForm.addEventListener('submit', handleSubmit);
+// catalogForm.addEventListener('click',addSelectedItemToCart);
+
 
 
 // Before anything else of value can happen, we need to fill in the select
