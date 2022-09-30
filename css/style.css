@@ -1,1 +1,13 @@
 /* TODO: Make it awesome */
+
+body {
+  background-color: coral;
+  font-size: 30px;
+}
+
+h1 {
+  color:aqua;
+  text-decoration: underline;
+  font-weight: bold;
+
+}
