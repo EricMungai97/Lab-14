@@ -20,7 +20,8 @@ function renderCart() {
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
-  let table = document.getElementById('cart');
+
+  let table = document.getElementById('cart')
   table.removeChild('tr');
 }
 
@@ -28,7 +29,7 @@ function clearCart() {
 function showCart() {
   let table = document.getElementById('tr');
   // TODO: Find the table body
-
+  let table = document.getElementById('cart')
   // TODO: Iterate over the items in the cart
   // TODO: Create a TR
   // TODO: Create a TD for the delete link, quantity,  and the item
